@@ -1,0 +1,153 @@
+* {
+  margin: 10;
+  padding: 10;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(241, 205, 234);
+  font-family: Arial;
+  font-size: 20px;
+  padding: 50px;
+  position: relative;
+}
+
+h1 {
+  font-size: 35px;
+  margin-bottom: 25px;
+  color: #47043c;
+  text-align: center;
+}
+
+#emp-name {
+  background-color: rgb(185, 135, 177);
+  border-radius: 15px;
+  outline: none;
+
+  padding: 40px;
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 3rem;
+}
+
+.input-date {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 10rem;
+}
+.input-income {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 9rem;
+}
+.input-categories {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 15rem;
+}
+.input-spent {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 7rem;
+}
+
+/*.add-data {
+  text-align: right;
+  font-size: 25px;
+  color: #e470e4;
+}
+
+.add-income {
+  font-size: 20px;
+}
+
+.input-name {
+  text-align: center;
+}*/
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* حذف فاصله بین خطوط */
+  margin-top: 5rem;
+}
+
+th,
+td {
+  border: 1px solid #ddd; /* خطوط دور هر سلول */
+  padding: 12px; /* فضای داخل سلول‌ها */
+  text-align: center; /* وسط‌چین کردن متن‌ها */
+  border-radius: 10px;
+  outline: none;
+}
+
+th {
+  background-color: #f2f2f2; /* رنگ پس‌زمینه برای عنوان‌ها */
+  font-weight: bold;
+
+  background-color: #501d45; /* رنگ سبز برای سرستون */
+  color: white; /* رنگ متن سفید */
+  text-align: center; /* وسط‌چین کردن متن‌ها */
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* ردیف‌های زوج را با رنگ ملایم‌تر نمایش می‌دهد */
+}
+
+tr:hover {
+  background-color: #e2e2e2; /* تغییر رنگ ردیف هنگام حرکت ماوس */
+}
+
+.add-job {
+  font-size: 20px;
+}
+
+.input-job {
+  text-align: center;
+}
+
+.add-age {
+  font-size: 20px;
+}
+
+.input-age {
+  text-align: center;
+}
+
+button {
+  background-color: #f44336; /* رنگ قرمز برای دکمه حذف */
+  color: rgb(255, 255, 255); /* رنگ متن سفید */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* لبه‌های گرد */
+  width: 3rem;
+  height: 2rem;
+}
+
+button:hover {
+  background-color: #d32f2f; /* رنگ تیره‌تر هنگام هاور */
+}
+.button-add {
+  margin-top: 10%;
+  background-color: #3c203d;
+  transition: background-color 0.5s;
+}
+.button-add:hover {
+  background-color: rgb(141, 13, 135);
+}

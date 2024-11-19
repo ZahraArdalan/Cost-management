@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Cost management</title>
+  </head>
+  <body>
+    <h1 class="h1.first">Cost management</h1>
+
+    <div class="form" id="emp-name">
+      <!--<h2 class="add-income">Add income</h2>-->
+      <div>
+        <p class="add-date">Add date</p>
+        <input
+          class="input-date"
+          id="date"
+          type="date"
+          placeholder="Exp: 2024/5/10 "
+        />
+      </div>
+      <div>
+        <p class="add-income">Add income</p>
+        <input
+          class="input-income"
+          id="income"
+          type="number"
+          placeholder="Exp: 450$"
+        />
+      </div>
+
+      <div>
+        <p class="add-categories">Cost categories</p>
+        <input
+          class="input-categories"
+          id="categories"
+          type="text"
+          placeholder="Exp: Transportation or food"
+        />
+      </div>
+
+      <div>
+        <p class="add-spent">amount spent</p>
+        <input
+          class="input-spent"
+          id="spent"
+          type="number"
+          placeholder="Exp: 12$"
+        />
+      </div>
+
+      <button class="button-add" id="addbtn">Add</button>
+      <div class="list" id="list"></div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Add date</th>
+          <th>Add income</th>
+          <th>Cost categorie</th>
+          <th>amount spent</th>
+        </tr>
+      </thead>
+      <tbody id="CostTable"></tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
