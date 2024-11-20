@@ -1,45 +1,48 @@
-let employees = [];
+let Cost = [];
 
 const addbutton = document.getElementById("addbtn");
-addbutton.addEventListener("click", addEmployee);
+addbutton.addEventListener("click", addCost);
 
-function addEmployee() {
-  const name = document.getElementById("name").value;
-  const job = document.getElementById("job").value;
-  const age = document.getElementById("age").value;
+function addCost() {
+  const date = document.getElementById("date").value;
+  const income = document.getElementById("income").value;
+  const categories = document.getElementById("categories").value;
+  const spent = document.getElementById("spent").value;
 
-  if (name && job && age) {
-    const employee = { name, job, age };
-    employees.push(employee);
+  if (spent && income && categories && date) {
+    const payment = { date, income, categories, spent };
+    Cost.push(payment);
 
-    document.getElementById("name").value = "";
-    document.getElementById("job").value = "";
-    document.getElementById("age").value = "";
-    displayEmployees();
+    document.getElementById("date").value = "";
+    document.getElementById("income").value = "";
+    document.getElementById("categories").value = "";
+    document.getElementById("spent").value = "";
+    displaypayment();
   } else {
     alert("لطفا همه فیلدها را پر کنید");
   }
 }
 
-function displayEmployees() {
-  const tablebody = document.getElementById("employeeTable");
+function displaypayment() {
+  const tablebody = document.getElementById("CostTable");
   tablebody.innerHTML = ""; // خالی کردن جدول برای بارگذاری جدید
 
-  employees.forEach((employee, index) => {
+  Cost.forEach((payment, index) => {
     const row = document.createElement("tr");
 
     row.innerHTML = `
-      <td>${employee.name}</td>
-      <td>${employee.job}</td>
-      <td>${employee.age}</td>
-      <td><button onclick="deleteEmployee(${index})">حذف</button></td>
+      <td>${payment.date}</td>
+      <td>${payment.income}</td>
+      <td>${payment.categories}</td>
+      <td>${payment.spent}</td>
+      <td><button onclick="deletePayment(${index})">حذف</button></td>
     `;
 
     tablebody.appendChild(row); // اضافه کردن ردیف به جدول
   });
 }
 
-function deleteEmployee(index) {
-  employees.splice(index, 1); // حذف کارمند از آرایه
-  displayEmployees(); // باز نمایش جدول پس از حذف
+function deletePayment(index) {
+  Cost.splice(index, 1); // حذف کارمند از آرایه
+  displaypayment(); // باز نمایش جدول پس از حذف
 }

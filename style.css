@@ -106,7 +106,11 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9; /* ردیف‌های زوج را با رنگ ملایم‌تر نمایش می‌دهد */
+  background-color: #806579; /* ردیف‌های زوج را با رنگ ملایم‌تر نمایش می‌دهد */
+}
+
+tr:nth-child(odd) {
+  background-color: #bd7bab; /* ردیف‌های فرد را با رنگ ملایم‌تر نمایش می‌دهد */
 }
 
 tr:hover {
@@ -130,7 +134,7 @@ tr:hover {
 }
 
 button {
-  background-color: #f44336; /* رنگ قرمز برای دکمه حذف */
+  background-color: #561c58; /* رنگ قرمز برای دکمه حذف */
   color: rgb(255, 255, 255); /* رنگ متن سفید */
   border: none;
   padding: 10px;
@@ -141,7 +145,7 @@ button {
 }
 
 button:hover {
-  background-color: #d32f2f; /* رنگ تیره‌تر هنگام هاور */
+  background-color: #a1317c; /* رنگ تیره‌تر هنگام هاور */
 }
 .button-add {
   margin-top: 10%;
