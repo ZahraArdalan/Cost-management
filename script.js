@@ -62,5 +62,31 @@ window.onload = () => {
   request.onsuccess = () => {
     console.log("Database Opened successfully");
     db = request.result;
+    console.log(db);
+  };
+
+  request.onupgradeneeded = (e) => {
+    let db = e.target.result;
+    let objectStore = db.createObjectStore("cost", {
+      keyPath: "id",
+      autoIncrement: true,
+    });
+    objectStore.createIndex("date", "date", {
+      unique: false,
+    });
+
+    objectStore.createIndex("income", "income", {
+      unique: false,
+    });
+
+    objectStore.createIndex("categories", "categories", {
+      unique: false,
+    });
+
+    objectStore.createIndex("spent", "spent", {
+      unique: false,
+    });
+
+    console.log("Database setup successfully...");
   };
 };
