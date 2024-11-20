@@ -46,3 +46,21 @@ function deletePayment(index) {
   Cost.splice(index, 1); // حذف کارمند از آرایه
   displaypayment(); // باز نمایش جدول پس از حذف
 }
+
+let db;
+const addDate = document.querySelector("#date");
+const addIncome = document.querySelector("#income");
+const addCategories = document.querySelector("#categories");
+const addSpent = document.querySelector("#spent");
+
+const form = document.querySelector(".form");
+window.onload = () => {
+  let request = window.indexedDB.open("cost", 1);
+  request.onerror = () => {
+    console.log("Database failed To Open");
+  };
+  request.onsuccess = () => {
+    console.log("Database Opened successfully");
+    db = request.result;
+  };
+};
