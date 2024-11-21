@@ -41,14 +41,16 @@ window.onload = () => {
     console.log("Database setup successfully...");
   };
 };
-
 const addData = (e) => {
+  // از رفرش کردن صفحه جلوگیری کند
   e.preventDefault();
+  console.log(e);
+
   let newItem = {
-    date: addDate.value,
-    categories: addCategories.value,
-    income: addIncome.value,
-    spent: addSpent.value,
+    odate: addDate.value,
+    ocategories: addCategories.value,
+    oincome: addIncome.value,
+    ospent: addSpent.value,
   };
 
   let transaction = db.transaction(["cost"], "readwrite");
@@ -69,4 +71,4 @@ const addData = (e) => {
   };
 };
 
-form.addEventListener("submit ", addData());
+form.addEventListener("submit", addData);
