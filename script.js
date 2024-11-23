@@ -35,7 +35,7 @@ function displaypayment() {
       <td>${payment.income}</td>
       <td>${payment.categories}</td>
       <td>${payment.spent}</td>
-      <td><button onclick="deletePayment(${index})">حذف</button></td>
+      <td><button onclick="deletePayment(${index})">delete</button></td>
     `;
 
     tablebody.appendChild(row); // اضافه کردن ردیف به جدول
@@ -46,4 +46,3 @@ function deletePayment(index) {
   Cost.splice(index, 1); // حذف کارمند از آرایه
   displaypayment(); // باز نمایش جدول پس از حذف
 }
-
