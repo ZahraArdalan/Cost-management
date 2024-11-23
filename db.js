@@ -3,7 +3,7 @@ const addDate = document.querySelector("#date");
 const addIncome = document.querySelector("#income");
 const addCategories = document.querySelector("#categories");
 const addSpent = document.querySelector("#spent");
-const list = document.querySelector(".list");
+const list = document.querySelector(".listdata");
 
 const form = document.querySelector(".form");
 window.onload = () => {
@@ -85,25 +85,26 @@ const displayData = () => {
 
     if (cursor) {
       let listItem = document.createElement("li");
-      let date = document.createElement("p");
-      let categories = document.createElement("p");
-      let spent = document.createElement("p");
-      let income = document.createElement("p");
-      date.textContent = cursor.value.addDate;
-      categories.textContent = cursor.value.addCategories;
-      spent.textContent = cursor.value.addSpent;
-      income.textContent = cursor.value.addIncome;
-      listItem.appendChild(date);
-      listItem.appendChild(categories);
-      listItem.appendChild(spent);
-      listItem.appendChild(income);
+      let date2 = document.createElement("p");
+      let categories2 = document.createElement("p");
+      let spent2 = document.createElement("p");
+      let income2 = document.createElement("p");
+      date2.textContent = cursor.value.odate;
+      categories2.textContent = cursor.value.ocategories;
+      spent2.textContent = cursor.value.ospent;
+      income2.textContent = cursor.value.oincome;
+      listItem.appendChild(date2);
+      listItem.appendChild(categories2);
+      listItem.appendChild(spent2);
+      listItem.appendChild(income2);
+      list.appendChild(listItem);
       listItem.setAttribute("data-cost-id", cursor.value.id);
       cursor.continue();
     } else {
       if (!list.firstChild) {
         let listItem = document.createElement("li");
         listItem.textContent = "There is no cost...!!";
-        listItem.appendChild(listItem);
+        list.appendChild(listItem);
       }
     }
   };
