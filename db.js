@@ -1,8 +1,8 @@
 let db;
-const addDate = document.querySelector("#date");
-const addIncome = document.querySelector("#income");
-const addCategories = document.querySelector("#categories");
-const addSpent = document.querySelector("#spent");
+const addDate = document.querySelector(".input-date");
+const addIncome = document.querySelector(".input-income");
+const addCategories = document.querySelector(".input-categories");
+const addSpent = document.querySelector(".input-spent");
 const list = document.querySelector(".listdata");
 
 const form = document.querySelector(".form");
@@ -54,6 +54,7 @@ const addData = (e) => {
     oincome: addIncome.value,
     ospent: addSpent.value,
   };
+  //console.log(newItem);
 
   let transaction = db.transaction(["cost"], "readwrite");
   let objectStore = transaction.objectStore("cost");
@@ -99,6 +100,12 @@ const displayData = () => {
       listItem.appendChild(income2);
       list.appendChild(listItem);
       listItem.setAttribute("data-cost-id", cursor.value.id);
+
+      let deleteButton = document.querySelector(".btndelete");
+      //console.log(deleteButton);
+      //listItem.appendChild(deleteButton);
+      deleteButton.addEventListener("click", deleteItem);
+
       cursor.continue();
     } else {
       if (!list.firstChild) {
@@ -106,6 +113,22 @@ const displayData = () => {
         listItem.textContent = "There is no cost...!!";
         list.appendChild(listItem);
       }
+    }
+  };
+};
+
+const deleteItem = (e) => {
+  let contactId = Number(e.target.parentElement.getAttribute("data-cost-id"));
+  let transaction = db.transaction(["cost"], "readwrite");
+  let objectStore = transaction.objectStore("cost");
+  let request = objectStore.delete(contactId);
+  transaction.oncomplete = () => {
+    e.target.parentElement.parentElement.removeChild(e.target.parentElement);
+    console.log(`contact ${contactId}is deleted`);
+    if (!list.firstChild) {
+      let listItem = document.createElement("li");
+      listItem.textContent = "There is no cost...!!";
+      list.appendChild(listItem);
     }
   };
 };
